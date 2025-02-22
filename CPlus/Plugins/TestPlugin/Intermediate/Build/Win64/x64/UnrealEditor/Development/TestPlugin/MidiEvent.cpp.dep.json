@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\private\\midievent.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\ueproject\\cplus\\intermediate\\build\\win64\\x64\\cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testplugin\\definitions.testplugin.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\midievent.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\testplugin\\uht\\midievent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

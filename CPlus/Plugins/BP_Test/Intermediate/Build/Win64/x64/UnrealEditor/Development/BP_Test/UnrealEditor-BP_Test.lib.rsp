@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-BP_Test.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UEProject\CPlus\Intermediate\Build\Win64\x64\CPlusEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"D:\UEProject\CPlus\Plugins\BP_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\BP_Test\Module.BP_Test.cpp.obj"
+"D:\UEProject\CPlus\Plugins\BP_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\BP_Test\BP_Test.cpp.obj"
+"D:\UEProject\CPlus\Plugins\BP_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\BP_Test\BP_TestBPLibrary.cpp.obj"
+"D:\UEProject\CPlus\Plugins\BP_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\BP_Test\Default.rc2.res"
+/OUT:"D:\UEProject\CPlus\Plugins\BP_Test\Intermediate\Build\Win64\x64\UnrealEditor\Development\BP_Test\UnrealEditor-BP_Test.lib"

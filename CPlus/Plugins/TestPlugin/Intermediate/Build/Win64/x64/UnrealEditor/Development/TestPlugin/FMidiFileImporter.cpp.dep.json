@@ -1,0 +1,39 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\private\\fmidifileimporter.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\ueproject\\cplus\\intermediate\\build\\win64\\x64\\cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testplugin\\definitions.testplugin.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\fmidifileimporter.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\merge\\public\\merge.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowser\\public\\contentbrowsermodule.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowser\\public\\contentbrowserdelegates.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowserdata\\public\\contentbrowserdatalegacybridge.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowserdata\\public\\contentbrowserdatamenucontexts.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowserdata\\public\\contentbrowseritem.h",
+            "e:\\ue_5.4\\engine\\source\\editor\\contentbrowserdata\\public\\contentbrowseritemdata.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\contentbrowserdata\\uht\\contentbrowseritem.generated.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\collectionmanager\\public\\collectionmanagertypes.h",
+            "e:\\ue_5.4\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolstate.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\contentbrowserdata\\uht\\contentbrowserdatamenucontexts.generated.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\contentbrowserdata\\uht\\contentbrowserdatalegacybridge.generated.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\midiasset.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\testplugin\\uht\\midiasset.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

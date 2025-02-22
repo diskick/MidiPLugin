@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\private\\midiasset.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\ueproject\\cplus\\intermediate\\build\\win64\\x64\\cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testplugin\\definitions.testplugin.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\midiasset.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\midievent.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\testplugin\\uht\\midievent.generated.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\source\\testplugin\\public\\miditrack.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\testplugin\\uht\\miditrack.generated.h",
+            "d:\\ueproject\\cplus\\plugins\\testplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\testplugin\\uht\\midiasset.generated.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\audiocomponent.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\public\\audio\\soundparametercontrollerinterface.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundparametercontrollerinterface.generated.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\audioextensions\\public\\iaudioparametertransmitter.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\audiomixer\\public\\quartz\\audiomixerquantizedcommands.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\audiomixer\\public\\quartz\\audiomixerclock.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\audiomixer\\public\\quartz\\quartzmetronome.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\sound\\quartzsubscription.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\sound\\quartzsubscriptiontoken.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\core\\public\\containers\\consumeallmpmcqueue.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\audiocomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

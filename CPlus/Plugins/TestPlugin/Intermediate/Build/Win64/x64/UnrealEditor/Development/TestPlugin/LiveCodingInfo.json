@@ -1,0 +1,17 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.TestPlugin.cpp.obj": [
+			"MidiAsset.gen.cpp.obj",
+			"MidiEvent.gen.cpp.obj",
+			"MIdiFactory.gen.cpp.obj",
+			"MidiTrack.gen.cpp.obj",
+			"TestPlugin.init.gen.cpp.obj",
+			"FAssetTypeActions_MidiAsset.cpp.obj",
+			"MidiAsset.cpp.obj",
+			"MidiEvent.cpp.obj",
+			"MIdiFactory.cpp.obj",
+			"TestPlugin.cpp.obj"
+		]
+	}
+}

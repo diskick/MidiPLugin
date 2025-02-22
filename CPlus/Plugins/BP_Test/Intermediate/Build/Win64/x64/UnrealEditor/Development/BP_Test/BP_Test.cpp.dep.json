@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\ueproject\\cplus\\plugins\\bp_test\\source\\bp_test\\private\\bp_test.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\ueproject\\cplus\\intermediate\\build\\win64\\x64\\cpluseditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\ueproject\\cplus\\plugins\\bp_test\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bp_test\\definitions.bp_test.h",
+            "d:\\ueproject\\cplus\\plugins\\bp_test\\source\\bp_test\\public\\bp_test.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

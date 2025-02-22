@@ -1,0 +1,7 @@
+{
+	"SourceFiles": [
+		"D:\\UEProject\\CPlus\\Plugins\\TestPlugin\\Source\\TestPlugin\\TestPlugin.Build.cs",
+		"D:\\UEProject\\CPlus\\Plugins\\TestPlugin\\Source\\ThirdParty\\TestPluginLibrary\\TestPluginLibrary.Build.cs"
+	],
+	"EngineVersion": "5.4.4"
+}

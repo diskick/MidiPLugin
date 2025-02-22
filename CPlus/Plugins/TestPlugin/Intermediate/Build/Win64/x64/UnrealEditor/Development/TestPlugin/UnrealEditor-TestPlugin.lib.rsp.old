@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-TestPlugin.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UEProject\CPlus\Intermediate\Build\Win64\x64\CPlusEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Module.TestPlugin.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\FAssetTypeActions_MidiAsset.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\MidiAsset.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\MidiEvent.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\MIdiFactory.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\TestPlugin.cpp.obj"
+"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Default.rc2.res"
+/OUT:"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\UnrealEditor-TestPlugin.lib"
