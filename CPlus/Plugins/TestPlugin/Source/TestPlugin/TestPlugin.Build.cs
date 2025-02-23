@@ -13,7 +13,7 @@ public class TestPlugin : ModuleRules
 			{
 				// ... add public include paths required here ...
 
-				"D:/UEProject/CPlus/Plugins/TestPlugin/Source/ThirdParty/Midi_Library"
+			//	"D:/UEProject/CPlus/Plugins/TestPlugin/Source/ThirdParty/Midi_Library"
 
 			}
 		);
