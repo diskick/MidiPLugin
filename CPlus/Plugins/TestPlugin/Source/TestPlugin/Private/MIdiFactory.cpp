@@ -53,18 +53,28 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     // 读取 MIDI 文件
     if (midiFile.read(MidiFilePath))
     {
-        // 清空现有的轨道数据
-//        Midi.Tracks.Empty();
-
+        // 清空空轨道
+    	midiFile.removeEmpties();
+    	//时间分析
+		midiFile.doTimeAnalysis();
+    	
         // 获取轨道数量
-        int TrackCount = midiFile.getTrackCount();
-    	Midi.TracksNumber = TrackCount;
+    	Midi.TracksNumber = midiFile.getTrackCount();
+    	
+    	// 获取文件路径
+    	Midi.FilePath=FilePath;
+    	
+    	// 获取文件名
+        Midi.FileName=midiFile.getFilename();
+    	
         // 解析每个轨道
-        for (int TrackIndex = 0; TrackIndex < TrackCount; ++TrackIndex)
+        for (int TrackIndex = 0; TrackIndex < Midi.TracksNumber; ++TrackIndex)
         {
             // 创建一个新的轨道对象
             FMidiTrack Track;
-            Track.TrackName = FString::Printf(TEXT("Track %d"), TrackIndex + 1); // 轨道命名
+        	
+        	// 轨道命名
+            Track.TrackName = FString::Printf(TEXT("Track %d"), TrackIndex + 1); 
 
             // 解析轨道中的所有 MIDI 事件
             for (int EventIndex = 0; EventIndex < midiFile[TrackIndex].getEventCount(); ++EventIndex)
@@ -73,9 +83,10 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
 
                 // 创建 MIDI 事件对象
                 FMidiEvent MidiEvent;
-                MidiEvent.tickDuration = event.tick / 1000.0f;  // 将时间戳转换为秒
-
-
+            	
+            	//设置时间
+                MidiEvent.Time =	event.seconds;
+            	
                 // 如果是 Note On 事件（音符开启）
                 if (event.getCommandByte() == 0x90) // Note On
                 {
@@ -84,17 +95,17 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
                     MidiEvent.bNoteOn = true;
                 }
                 // 如果是 Note Off 事件（音符关闭）
-                else if (event.getCommandByte() == 0x80) // Note Off
+       /*         else if (event.getCommandByte() == 0x80) // Note Off
                 {
                 	MidiEvent.Note = event.getKeyNumber(); // 音符
                 	MidiEvent.Velocity =event.getVelocity(); // 力度
                     MidiEvent.bNoteOn = false;
                 }
-
-                // 将 MIDI 事件添加到轨道中
-                Track.TrackEvents.Add(MidiEvent);
+        */
+            	//将事件添加到轨道
+            	Track.TrackEvents.Add(MidiEvent);
             }
-
+			
             // 将解析的轨道添加到 MidiAsset 中
            Midi.MidiTracks.Add(Track);
         }

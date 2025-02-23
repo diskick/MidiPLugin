@@ -14,7 +14,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TESTPLUGIN_MidiAsset_generated_h
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_12_DELEGATE \
+TESTPLUGIN_API void FOnNoteOnEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOnEvent, int32 NoteNumber);
+
+
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_15_DELEGATE \
+TESTPLUGIN_API void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOffEvent, int32 NoteNumber);
+
+
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execplaynotes);
+
+
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUMidiAsset(); \
 	friend struct Z_Construct_UClass_UMidiAsset_Statics; \
@@ -23,7 +35,7 @@ public: \
 	DECLARE_SERIALIZER(UMidiAsset)
 
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UMidiAsset(UMidiAsset&&); \
@@ -35,12 +47,13 @@ public: \
 	NO_API virtual ~UMidiAsset();
 
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_10_PROLOG
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_13_GENERATED_BODY \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_18_PROLOG
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_13_INCLASS_NO_PURE_DECLS \
-	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_13_ENHANCED_CONSTRUCTORS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_INCLASS_NO_PURE_DECLS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

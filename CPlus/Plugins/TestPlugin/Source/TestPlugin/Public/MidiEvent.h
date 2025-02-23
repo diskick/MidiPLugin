@@ -13,23 +13,25 @@ struct FMidiEvent
 
 public:
 	// MIDI 时间戳（单位：毫秒）
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
-	float tickDuration;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
+	float Time;
 
 	// MIDI 音符，0-127的值
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	int32 Note;
 
 	// 音符的力度（0-127的值）
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	int32 Velocity;
 
 	// 是否是音符开始的事件
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	bool bNoteOn;
+	
+
 
 	// 构造函数
-	FMidiEvent(): tickDuration(0.f), Note(0), Velocity(0), bNoteOn(false)
+	FMidiEvent():  Note(0), Velocity(0), bNoteOn(false)
 	{
 	}
 	

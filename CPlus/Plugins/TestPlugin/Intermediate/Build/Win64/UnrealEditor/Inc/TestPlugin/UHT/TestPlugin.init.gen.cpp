@@ -7,23 +7,29 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTestPlugin_init() {}
+	TESTPLUGIN_API UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature();
+	TESTPLUGIN_API UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_TestPlugin;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_TestPlugin()
 	{
 		if (!Z_Registration_Info_UPackage__Script_TestPlugin.OuterSingleton)
 		{
+			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature,
+			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/TestPlugin",
-				nullptr,
-				0,
+				SingletonFuncArray,
+				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x0AA67A0F,
-				0xC461A3FD,
+				0x07D06D20,
+				0xD740C1CA,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_TestPlugin.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_TestPlugin.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_TestPlugin(Z_Construct_UPackage__Script_TestPlugin, TEXT("/Script/TestPlugin"), Z_Registration_Info_UPackage__Script_TestPlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x0AA67A0F, 0xC461A3FD));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_TestPlugin(Z_Construct_UPackage__Script_TestPlugin, TEXT("/Script/TestPlugin"), Z_Registration_Info_UPackage__Script_TestPlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x07D06D20, 0xD740C1CA));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

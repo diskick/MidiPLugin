@@ -13,16 +13,16 @@ struct FMidiTrack
 
 public:
 	// MIDI 轨道名称或标识符
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Track")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Track")
 	FString TrackName;
 
 	// MIDI 轨道上的所有事件
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Track")
-	TArray<FMidiEvent> TrackEvents; // MIDI 事件列表（按时间戳排序）
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Track")
+	TArray<FMidiEvent> TrackEvents;
 
+	
 	// 构造函数
-	FMidiTrack()
-		: TrackName(TEXT("Unnamed Track"))
+	FMidiTrack(): TrackName(TEXT("Unnamed Track"))
 	{
 	}
 	
