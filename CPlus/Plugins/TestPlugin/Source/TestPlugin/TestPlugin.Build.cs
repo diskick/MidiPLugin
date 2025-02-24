@@ -34,22 +34,59 @@ public class TestPlugin : ModuleRules
 			new string[]
 			{
 				"$(ModuleDir)/../ThirdParty/Midi_Library/bin/Midi.lib",
+				//踩到大坑了,静态和动态库不能同时用,会导致编译错误.
+				//"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.a",
 				
-				"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.a"
+				"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.dll.a"
 			}
 			);
-		
+		/*
 		PublicDelayLoadDLLs.AddRange(new string[]
 		{
-			"MidLib.dll"
+			"$(ModuleDir)/../ThirdParty/fluidsynth/bin/libglib-2.0-0.dll",
+			"$(ModuleDir)/../ThirdParty/fluidsynth/bin/libgthread-2.0-0.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libfluidsynth-3.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgcc_s_sjlj-1.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgobject-2.0-0.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgomp-1.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libinstpatch-2.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libintl-8.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libstdc++-6.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/lsndfile.dll",
+			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libwinpthread-1.dll"
+			
+			
+			
+			
+			
 		}
 		);
 
 		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/Midi_Library/bin/MidLib.dll");
+		RuntimeDependencies.Add("(ModuleDir)/../ThirdParty/fluidsynth/bin/libglib-2.0-0.dll");
+			
+		RuntimeDependencies.Add("$(ModuleDir)/../ThirdParty/fluidsynth/bin/libgthread-2.0-0.dll");
 		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libfluidsynth-3.dll");
 		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgcc_s_sjlj-1.dll");
 		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgobject-2.0-0.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgomp-1.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libinstpatch-2.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libintl-8.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libstdc++-6.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/lsndfile.dll");
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libwinpthread-1.dll");
+		
+		*/
+	
 		
 		
 		PublicDependencyModuleNames.AddRange(

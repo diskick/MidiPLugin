@@ -34,10 +34,6 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 	}
 	else
 	{
-		fluid_settings_t* settings = new_fluid_settings();
-		fluid_synth_t* set = new_fluid_synth(settings);
-		fluid_player_t* player = new_fluid_player(set);
-		
 		bOutOperationCanceled = true;
 		return nullptr;
 	}
