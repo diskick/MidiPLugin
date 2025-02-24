@@ -2,6 +2,7 @@
 #include "MidiAsset.h" 
 #include "MidiTrack.h"
 #include "MidiFile.h"
+#include "fluidsynth.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 #include "Runtime/CoreUObject/Public/UObject/Object.h"
@@ -33,6 +34,9 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 	}
 	else
 	{
+		fluid_settings_t* settings = new_fluid_settings();
+		fluid_synth_t* set = new_fluid_synth(settings);
+		fluid_player_t* player = new_fluid_player(set);
 		
 		bOutOperationCanceled = true;
 		return nullptr;
@@ -55,6 +59,7 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     {
         // 清空空轨道
     	midiFile.removeEmpties();
+    	
     	//时间分析
 		midiFile.doTimeAnalysis();
     	
@@ -93,6 +98,7 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
                     MidiEvent.Note = event.getKeyNumber(); // 音符
                     MidiEvent.Velocity =event.getVelocity(); // 力度
                     MidiEvent.bNoteOn = true;
+                	MidiEvent.InTrack=TrackIndex+1;
                 }
                 // 如果是 Note Off 事件（音符关闭）
        /*         else if (event.getCommandByte() == 0x80) // Note Off

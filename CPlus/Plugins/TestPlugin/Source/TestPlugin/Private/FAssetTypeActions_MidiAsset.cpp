@@ -35,6 +35,7 @@ void FAssetTypeActions_MidiAsset::GetActions(const TArray<UObject*>& InObjects, 
 		{
 			// 假设你将选中的对象传递给 Factory
 			UE_LOG(LogTemp, Warning, TEXT("GetActions"));
+			
 		}))
 	);
 }

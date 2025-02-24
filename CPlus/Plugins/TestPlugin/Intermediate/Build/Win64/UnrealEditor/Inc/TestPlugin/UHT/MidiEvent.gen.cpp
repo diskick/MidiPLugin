@@ -71,22 +71,21 @@ struct Z_Construct_UScriptStruct_FMidiEvent_Statics
 		{ "ToolTip", "\xe9\x9f\xb3\xe7\xac\xa6\xe7\x9a\x84\xe5\x8a\x9b\xe5\xba\xa6\xef\xbc\x88""0-127\xe7\x9a\x84\xe5\x80\xbc\xef\xbc\x89" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bNoteOn_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bPlayed_MetaData[] = {
 		{ "Category", "MIDI Event" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xe6\x98\xaf\xe5\x90\xa6\xe6\x98\xaf\xe9\x9f\xb3\xe7\xac\xa6\xe5\xbc\x80\xe5\xa7\x8b\xe7\x9a\x84\xe4\xba\x8b\xe4\xbb\xb6\n" },
-#endif
 		{ "ModuleRelativePath", "Public/MidiEvent.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe6\x98\xaf\xe5\x90\xa6\xe6\x98\xaf\xe9\x9f\xb3\xe7\xac\xa6\xe5\xbc\x80\xe5\xa7\x8b\xe7\x9a\x84\xe4\xba\x8b\xe4\xbb\xb6" },
-#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InTrack_MetaData[] = {
+		{ "Category", "MIDI Event" },
+		{ "ModuleRelativePath", "Public/MidiEvent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Time;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Note;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Velocity;
-	static void NewProp_bNoteOn_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_bNoteOn;
+	static void NewProp_bPlayed_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bPlayed;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_InTrack;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static void* NewStructOps()
 	{
@@ -97,16 +96,18 @@ struct Z_Construct_UScriptStruct_FMidiEvent_Statics
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiEvent, Time), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Time_MetaData), NewProp_Time_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Note = { "Note", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiEvent, Note), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Note_MetaData), NewProp_Note_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Velocity = { "Velocity", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiEvent, Velocity), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Velocity_MetaData), NewProp_Velocity_MetaData) };
-void Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bNoteOn_SetBit(void* Obj)
+void Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bPlayed_SetBit(void* Obj)
 {
-	((FMidiEvent*)Obj)->bNoteOn = 1;
+	((FMidiEvent*)Obj)->bPlayed = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bNoteOn = { "bNoteOn", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FMidiEvent), &Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bNoteOn_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bNoteOn_MetaData), NewProp_bNoteOn_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bPlayed = { "bPlayed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FMidiEvent), &Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bPlayed_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bPlayed_MetaData), NewProp_bPlayed_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_InTrack = { "InTrack", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiEvent, InTrack), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InTrack_MetaData), NewProp_InTrack_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FMidiEvent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Time,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Note,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_Velocity,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bNoteOn,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_bPlayed,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiEvent_Statics::NewProp_InTrack,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FMidiEvent_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FMidiEvent_Statics::StructParams = {
@@ -136,10 +137,10 @@ UScriptStruct* Z_Construct_UScriptStruct_FMidiEvent()
 struct Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiEvent_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FMidiEvent::StaticStruct, Z_Construct_UScriptStruct_FMidiEvent_Statics::NewStructOps, TEXT("MidiEvent"), &Z_Registration_Info_UScriptStruct_MidiEvent, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMidiEvent), 3300194697U) },
+		{ FMidiEvent::StaticStruct, Z_Construct_UScriptStruct_FMidiEvent_Statics::NewStructOps, TEXT("MidiEvent"), &Z_Registration_Info_UScriptStruct_MidiEvent, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMidiEvent), 916252839U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiEvent_h_357941389(TEXT("/Script/TestPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiEvent_h_716282504(TEXT("/Script/TestPlugin"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiEvent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiEvent_h_Statics::ScriptStructInfo),
 	nullptr, 0);

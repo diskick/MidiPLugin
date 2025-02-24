@@ -27,41 +27,15 @@ void FTestPluginModule::StartupModule()
 	
 	
 	FString BaseDir = IPluginManager::Get().FindPlugin("TestPlugin")->GetBaseDir();
-
-	//添加Dll文件
-	/*
-	FString LibraryPath;
-	LibraryPath = FPaths::Combine(*BaseDir, TEXT("Binaries/ThirdParty/CompareTestLibrary/Win64//MidiLib.lib"));
 	
-	ExampleLibraryHandle = !LibraryPath.IsEmpty() ? FPlatformProcess::GetDllHandle(*LibraryPath) : nullptr;
-	
-
-	
-	if (ExampleLibraryHandle)
-	{
-		// Call the test function in the third party library that opens a message box
-	//	FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("ThirdPartyLibraryError", "Success"));
-		
-	}
-	else
-	{
-		FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("ThirdPartyLibraryError", "Failed to load example MidiLibrary"));
-	}
-
-*/
 	
 }
 
 void FTestPluginModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
 
-	// Free the dll handle
-	FPlatformProcess::FreeDllHandle(ExampleLibraryHandle);
-	ExampleLibraryHandle = nullptr;
 }
 
 #undef LOCTEXT_NAMESPACE
 	
-IMPLEMENT_MODULE(FTestPluginModule, CompareTest)
+IMPLEMENT_MODULE(FTestPluginModule, TestPlugin)

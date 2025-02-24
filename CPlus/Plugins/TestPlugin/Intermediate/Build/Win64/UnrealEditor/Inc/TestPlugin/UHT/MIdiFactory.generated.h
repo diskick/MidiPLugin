@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TESTPLUGIN_MIdiFactory_generated_h
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUMidiFactory(); \
 	friend struct Z_Construct_UClass_UMidiFactory_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UMidiFactory)
 
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UMidiFactory(UMidiFactory&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~UMidiFactory();
 
 
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_11_PROLOG
-#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_14_GENERATED_BODY \
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_9_PROLOG
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_14_INCLASS_NO_PURE_DECLS \
-	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_14_ENHANCED_CONSTRUCTORS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_12_INCLASS_NO_PURE_DECLS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MIdiFactory_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

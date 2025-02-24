@@ -9,14 +9,14 @@
 
 
 // 事件委托：当音符启动时触发
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNoteOnEvent, int32, NoteNumber);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNoteOnEvent, FMidiEvent, event);
 
 // 事件委托：当音符停止时触发
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNoteOffEvent, int32, NoteNumber);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNoteOffEvent, FMidiEvent, event);
 
 
 UCLASS(BlueprintType)
-class TESTPLUGIN_API UMidiAsset : public UObject
+class TESTPLUGIN_API UMidiAsset : public UObject, public FTickableGameObject
 {
 	GENERATED_BODY()
 
@@ -25,6 +25,16 @@ class TESTPLUGIN_API UMidiAsset : public UObject
 public:
 	UMidiAsset();
 
+	// 重写 Tick 函数
+	virtual void Tick(float DeltaTime) override;
+
+	// 重写 IsTickable 函数
+	virtual bool IsTickable() const override;
+
+	// 重写 GetStatId 函数
+	virtual TStatId GetStatId() const override;
+	
+	bool cantick;
 
 	// MIDI 文件的路径
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,  Category="MIDI")

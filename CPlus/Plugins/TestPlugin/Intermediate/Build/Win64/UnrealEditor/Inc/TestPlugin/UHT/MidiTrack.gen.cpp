@@ -75,8 +75,8 @@ struct Z_Construct_UScriptStruct_FMidiTrack_Statics
 	static const UECodeGen_Private::FStructParams StructParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackName = { "TrackName", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiTrack, TrackName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrackName_MetaData), NewProp_TrackName_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackEvents_Inner = { "TrackEvents", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FMidiEvent, METADATA_PARAMS(0, nullptr) }; // 3300194697
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackEvents = { "TrackEvents", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiTrack, TrackEvents), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrackEvents_MetaData), NewProp_TrackEvents_MetaData) }; // 3300194697
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackEvents_Inner = { "TrackEvents", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FMidiEvent, METADATA_PARAMS(0, nullptr) }; // 916252839
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackEvents = { "TrackEvents", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FMidiTrack, TrackEvents), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrackEvents_MetaData), NewProp_TrackEvents_MetaData) }; // 916252839
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FMidiTrack_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackName,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FMidiTrack_Statics::NewProp_TrackEvents_Inner,
@@ -110,10 +110,10 @@ UScriptStruct* Z_Construct_UScriptStruct_FMidiTrack()
 struct Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiTrack_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FMidiTrack::StaticStruct, Z_Construct_UScriptStruct_FMidiTrack_Statics::NewStructOps, TEXT("MidiTrack"), &Z_Registration_Info_UScriptStruct_MidiTrack, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMidiTrack), 3270729581U) },
+		{ FMidiTrack::StaticStruct, Z_Construct_UScriptStruct_FMidiTrack_Statics::NewStructOps, TEXT("MidiTrack"), &Z_Registration_Info_UScriptStruct_MidiTrack, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMidiTrack), 1219923996U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiTrack_h_197912791(TEXT("/Script/TestPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiTrack_h_3058786392(TEXT("/Script/TestPlugin"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiTrack_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiTrack_h_Statics::ScriptStructInfo),
 	nullptr, 0);

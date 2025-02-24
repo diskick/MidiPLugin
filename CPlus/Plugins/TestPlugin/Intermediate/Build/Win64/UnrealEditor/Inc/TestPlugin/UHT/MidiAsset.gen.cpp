@@ -6,6 +6,7 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "TestPlugin/Public/MidiAsset.h"
+#include "TestPlugin/Public/MidiEvent.h"
 #include "TestPlugin/Public/MidiTrack.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMidiAsset() {}
@@ -16,6 +17,7 @@ TESTPLUGIN_API UClass* Z_Construct_UClass_UMidiAsset();
 TESTPLUGIN_API UClass* Z_Construct_UClass_UMidiAsset_NoRegister();
 TESTPLUGIN_API UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature();
 TESTPLUGIN_API UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature();
+TESTPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FMidiEvent();
 TESTPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FMidiTrack();
 UPackage* Z_Construct_UPackage__Script_TestPlugin();
 // End Cross Module References
@@ -25,7 +27,7 @@ struct Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature
 {
 	struct _Script_TestPlugin_eventOnNoteOnEvent_Parms
 	{
-		int32 NoteNumber;
+		FMidiEvent event;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -38,13 +40,13 @@ struct Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature
 #endif
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_NoteNumber;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_event;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::NewProp_NoteNumber = { "NoteNumber", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_TestPlugin_eventOnNoteOnEvent_Parms, NoteNumber), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::NewProp_event = { "event", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_TestPlugin_eventOnNoteOnEvent_Parms, event), Z_Construct_UScriptStruct_FMidiEvent, METADATA_PARAMS(0, nullptr) }; // 916252839
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::NewProp_NoteNumber,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::NewProp_event,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_TestPlugin, nullptr, "OnNoteOnEvent__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::_Script_TestPlugin_eventOnNoteOnEvent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -58,14 +60,14 @@ UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSigna
 	}
 	return ReturnFunction;
 }
-void FOnNoteOnEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOnEvent, int32 NoteNumber)
+void FOnNoteOnEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOnEvent, FMidiEvent event)
 {
 	struct _Script_TestPlugin_eventOnNoteOnEvent_Parms
 	{
-		int32 NoteNumber;
+		FMidiEvent event;
 	};
 	_Script_TestPlugin_eventOnNoteOnEvent_Parms Parms;
-	Parms.NoteNumber=NoteNumber;
+	Parms.event=event;
 	OnNoteOnEvent.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FOnNoteOnEvent
@@ -75,7 +77,7 @@ struct Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignatur
 {
 	struct _Script_TestPlugin_eventOnNoteOffEvent_Parms
 	{
-		int32 NoteNumber;
+		FMidiEvent event;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -88,13 +90,13 @@ struct Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignatur
 #endif
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_NoteNumber;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_event;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::NewProp_NoteNumber = { "NoteNumber", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_TestPlugin_eventOnNoteOffEvent_Parms, NoteNumber), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::NewProp_event = { "event", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_TestPlugin_eventOnNoteOffEvent_Parms, event), Z_Construct_UScriptStruct_FMidiEvent, METADATA_PARAMS(0, nullptr) }; // 916252839
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::NewProp_NoteNumber,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::NewProp_event,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_TestPlugin, nullptr, "OnNoteOffEvent__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::_Script_TestPlugin_eventOnNoteOffEvent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -108,14 +110,14 @@ UFunction* Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSign
 	}
 	return ReturnFunction;
 }
-void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOffEvent, int32 NoteNumber)
+void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOffEvent, FMidiEvent event)
 {
 	struct _Script_TestPlugin_eventOnNoteOffEvent_Parms
 	{
-		int32 NoteNumber;
+		FMidiEvent event;
 	};
 	_Script_TestPlugin_eventOnNoteOffEvent_Parms Parms;
-	Parms.NoteNumber=NoteNumber;
+	Parms.event=event;
 	OnNoteOffEvent.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FOnNoteOffEvent
@@ -284,11 +286,11 @@ const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMidiAsset_Static
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_FileName = { "FileName", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, FileName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FileName_MetaData), NewProp_FileName_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_Length = { "Length", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, Length), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Length_MetaData), NewProp_Length_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_TracksNumber = { "TracksNumber", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, TracksNumber), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TracksNumber_MetaData), NewProp_TracksNumber_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_MidiTracks_Inner = { "MidiTracks", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FMidiTrack, METADATA_PARAMS(0, nullptr) }; // 3270729581
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_MidiTracks = { "MidiTracks", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, MidiTracks), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MidiTracks_MetaData), NewProp_MidiTracks_MetaData) }; // 3270729581
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_MidiTracks_Inner = { "MidiTracks", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FMidiTrack, METADATA_PARAMS(0, nullptr) }; // 1219923996
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_MidiTracks = { "MidiTracks", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, MidiTracks), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MidiTracks_MetaData), NewProp_MidiTracks_MetaData) }; // 1219923996
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_CurrentTime = { "CurrentTime", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, CurrentTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentTime_MetaData), NewProp_CurrentTime_MetaData) };
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOnEvent = { "OnNoteOnEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOnEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOnEvent_MetaData), NewProp_OnNoteOnEvent_MetaData) }; // 1178558289
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOffEvent = { "OnNoteOffEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOffEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOffEvent_MetaData), NewProp_OnNoteOffEvent_MetaData) }; // 332399656
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOnEvent = { "OnNoteOnEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOnEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOnEvent_MetaData), NewProp_OnNoteOnEvent_MetaData) }; // 351546616
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOffEvent = { "OnNoteOffEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOffEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOffEvent_MetaData), NewProp_OnNoteOffEvent_MetaData) }; // 798171807
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMidiAsset_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_FilePath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_FileName,
@@ -341,10 +343,10 @@ UMidiAsset::~UMidiAsset() {}
 struct Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMidiAsset, UMidiAsset::StaticClass, TEXT("UMidiAsset"), &Z_Registration_Info_UClass_UMidiAsset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMidiAsset), 732911305U) },
+		{ Z_Construct_UClass_UMidiAsset, UMidiAsset::StaticClass, TEXT("UMidiAsset"), &Z_Registration_Info_UClass_UMidiAsset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMidiAsset), 2856176930U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_1396314859(TEXT("/Script/TestPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_3894214003(TEXT("/Script/TestPlugin"),
 	Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

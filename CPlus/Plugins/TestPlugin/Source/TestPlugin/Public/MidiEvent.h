@@ -25,13 +25,16 @@ public:
 	int32 Velocity;
 
 	// 是否是音符开始的事件
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	bool bNoteOn;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
+	mutable bool bPlayed;
 
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
+	int32 InTrack;
+	
 	// 构造函数
-	FMidiEvent():  Note(0), Velocity(0), bNoteOn(false)
+	FMidiEvent(): Time(0), Note(0), Velocity(0), bNoteOn(false),bPlayed(true),InTrack(0)
 	{
 	}
 	

@@ -12,9 +12,6 @@ public class TestPlugin : ModuleRules
 			new string[]
 			{
 				// ... add public include paths required here ...
-
-			//	"D:/UEProject/CPlus/Plugins/TestPlugin/Source/ThirdParty/Midi_Library"
-
 			}
 		);
 
@@ -25,7 +22,36 @@ public class TestPlugin : ModuleRules
 			}
 		);
 	
+		PublicSystemIncludePaths.AddRange(
+			new string[]{
+				
+			"$(ModuleDir)/../ThirdParty/Midi_Library/include",
+			"$(ModuleDir)/../ThirdParty/fluidsynth/include"
+		}
+		);
+		PublicAdditionalLibraries.AddRange(
+			
+			new string[]
+			{
+				"$(ModuleDir)/../ThirdParty/Midi_Library/bin/Midi.lib",
+				
+				"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.a"
+			}
+			);
+		
+		PublicDelayLoadDLLs.AddRange(new string[]
+		{
+			"MidLib.dll"
+		}
+		);
 
+		
+		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/Midi_Library/bin/MidLib.dll");
+		
+		
+		
+		
+		
 		PublicDependencyModuleNames.AddRange(
 			new[]
 			{
@@ -36,7 +62,6 @@ public class TestPlugin : ModuleRules
 				"Engine",
 				"Slate", // 确保添加了 Slate 模块
 				"SlateCore",
-				"Midi_Library" ,
 				"AudioMixer"
 				// ... add other public dependencies that you statically link with here ...
 			}

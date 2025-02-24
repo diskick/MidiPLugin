@@ -9,17 +9,18 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FMidiEvent;
 #ifdef TESTPLUGIN_MidiAsset_generated_h
 #error "MidiAsset.generated.h already included, missing '#pragma once' in MidiAsset.h"
 #endif
 #define TESTPLUGIN_MidiAsset_generated_h
 
 #define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_12_DELEGATE \
-TESTPLUGIN_API void FOnNoteOnEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOnEvent, int32 NoteNumber);
+TESTPLUGIN_API void FOnNoteOnEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOnEvent, FMidiEvent event);
 
 
 #define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_15_DELEGATE \
-TESTPLUGIN_API void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOffEvent, int32 NoteNumber);
+TESTPLUGIN_API void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelegate& OnNoteOffEvent, FMidiEvent event);
 
 
 #define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
