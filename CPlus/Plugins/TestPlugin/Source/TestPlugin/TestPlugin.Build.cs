@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
-using System.IO;
 public class TestPlugin : ModuleRules
 {
 	public TestPlugin(ReadOnlyTargetRules Target) : base(Target)
@@ -23,70 +22,27 @@ public class TestPlugin : ModuleRules
 		);
 	
 		PublicSystemIncludePaths.AddRange(
-			new string[]{
+			new[]{
 				
 			"$(ModuleDir)/../ThirdParty/Midi_Library/include",
-			"$(ModuleDir)/../ThirdParty/fluidsynth/include"
+			"$(ModuleDir)/../ThirdParty/Timidity/include"
+			
 		}
 		);
 		PublicAdditionalLibraries.AddRange(
 			
-			new string[]
+			new[]
 			{
 				"$(ModuleDir)/../ThirdParty/Midi_Library/bin/Midi.lib",
-				//踩到大坑了,静态和动态库不能同时用,会导致编译错误.
-				//"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.a",
 				
-				"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.dll.a"
+				"$(ModuleDir)/../ThirdParty/Timidity/StaticLib1.lib"
+				//大坑一个,磨了三天,宏定有了导出宏,删掉居然就好了.
+				//"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.dll.a"
+				//浪费我的时间精力,.a文件是给liunx用的,没有Cmake暂时不知道如何构建DLL文件,而且DLL问题还蛮多的
 			}
 			);
-		/*
-		PublicDelayLoadDLLs.AddRange(new string[]
-		{
-			"$(ModuleDir)/../ThirdParty/fluidsynth/bin/libglib-2.0-0.dll",
-			"$(ModuleDir)/../ThirdParty/fluidsynth/bin/libgthread-2.0-0.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libfluidsynth-3.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgcc_s_sjlj-1.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgobject-2.0-0.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgomp-1.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libinstpatch-2.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libintl-8.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libstdc++-6.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/lsndfile.dll",
-			"$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libwinpthread-1.dll"
-			
-			
-			
-			
-			
-		}
-		);
-
 		
-		RuntimeDependencies.Add("(ModuleDir)/../ThirdParty/fluidsynth/bin/libglib-2.0-0.dll");
-			
-		RuntimeDependencies.Add("$(ModuleDir)/../ThirdParty/fluidsynth/bin/libgthread-2.0-0.dll");
 		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libfluidsynth-3.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgcc_s_sjlj-1.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgobject-2.0-0.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libgomp-1.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libinstpatch-2.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libintl-8.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libstdc++-6.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/lsndfile.dll");
-		
-		RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/fluidsynth/bin/libwinpthread-1.dll");
-		
-		*/
-	
 		
 		
 		PublicDependencyModuleNames.AddRange(

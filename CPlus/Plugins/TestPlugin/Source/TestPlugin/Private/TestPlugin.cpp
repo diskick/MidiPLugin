@@ -10,6 +10,7 @@
 #include "AssetToolsModule.h"
 #include "FAssetTypeActions_MidiAsset.h"
 #include "MidiFile.h"
+#include "timidity.h"
 
 
 #define LOCTEXT_NAMESPACE "FTestPluginModule"
@@ -28,6 +29,7 @@ void FTestPluginModule::StartupModule()
 	
 	FString BaseDir = IPluginManager::Get().FindPlugin("TestPlugin")->GetBaseDir();
 	
+	mid_get_version();
 	
 }
 

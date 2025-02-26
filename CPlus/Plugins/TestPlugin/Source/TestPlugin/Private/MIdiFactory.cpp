@@ -2,7 +2,7 @@
 #include "MidiAsset.h" 
 #include "MidiTrack.h"
 #include "MidiFile.h"
-#include "fluidsynth.h"
+#include "Timidity.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 #include "Runtime/CoreUObject/Public/UObject/Object.h"
@@ -22,7 +22,8 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 {
 	// 创建新的 UMidiAsset 实例
 	bOutOperationCanceled = false;
-	UMidiAsset* NewMidiAsset = NewObject<UMidiAsset>(InParent, Name, Flags);
+	UMidiAsset* MidiFileAsset = FindObject<UMidiAsset>(InParent, *Name.ToString());
+	UMidiAsset* NewMidiAsset = NewObject<UMidiAsset>(InParent,Class, Name, Flags);
 
 	TArray<uint8> FileData;
 	NewMidiAsset->SetPath(FilePath);
@@ -30,7 +31,6 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 	{
 		UE_LOG(LogTemp, Display, TEXT("Loading MIDI File: %s"), *FilePath);
 		ParseMidiFile(*FilePath,*NewMidiAsset);
-		
 	}
 	else
 	{
@@ -53,6 +53,7 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     // 读取 MIDI 文件
     if (midiFile.read(MidiFilePath))
     {
+    	ConvertMidiToWav(FilePath,FilePath,"D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/ThirdParty/fluidsynth/FluidR3_GM_GS.sf2");
         // 清空空轨道
     	midiFile.removeEmpties();
     	
@@ -118,5 +119,12 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
         UE_LOG(LogTemp, Warning, TEXT("Failed to load MIDI file: %s"), *FilePath);
     }
 
-	
+	 
+}
+
+void UMidiFactory::ConvertMidiToWav(const FString& FilePath, const FString& OutputWavFilePath,const FString& SoundFontPath)
+{
+
+	const char* config = "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/ThirdParty/Timidity/TIMIDITY.cfg";
+
 }
