@@ -72,6 +72,11 @@ public:
 UFUNCTION(BlueprintCallable, Category = "MIDI")
 	void playnotes(float DeltaTime);
 
+	UFUNCTION(BlueprintCallable, Category = "MIDI")
+	void playmidi();
+
+	
+
 	//委托
 	UPROPERTY(BlueprintAssignable, Category = "Midi Events")
 	FOnNoteOnEvent OnNoteOnEvent;

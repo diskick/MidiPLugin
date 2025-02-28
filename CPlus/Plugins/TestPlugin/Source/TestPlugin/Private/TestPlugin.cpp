@@ -28,9 +28,39 @@ void FTestPluginModule::StartupModule()
 	
 	
 	FString BaseDir = IPluginManager::Get().FindPlugin("TestPlugin")->GetBaseDir();
+
+
+
+
+
+
+
+	/*const char *config=NULL ;
+
 	
-	mid_get_version();
+	if (mid_init(config)==0)
+	{
+		FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("Log","TiMidiTY Loaded"));
+	}
+
+	MidIStream *stream;
+	MidSongOptions *options;
+	options->rate = 44100;
+	options->format = 16;
+	options->channels = 2;
+	options->buffer_size = 44100;
+	options->_pad=0;
+	options->_reserved=0;
+	const char *file_path = "D:/Administrator/Download/yuanshen.mid";
 	
+	mid_istream_open_file(file_path);
+	
+	MidSong *song = mid_song_load(stream, options);
+	
+	mid_song_start(song);
+	
+	FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("Log","{0}"));
+	*/
 }
 
 void FTestPluginModule::ShutdownModule()

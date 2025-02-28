@@ -24,6 +24,7 @@ TESTPLUGIN_API void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelega
 
 
 #define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execplaymidi); \
 	DECLARE_FUNCTION(execplaynotes);
 
 

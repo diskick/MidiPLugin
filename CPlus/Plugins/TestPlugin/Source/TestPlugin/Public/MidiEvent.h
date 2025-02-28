@@ -12,10 +12,14 @@ struct FMidiEvent
 	GENERATED_BODY()
 
 public:
-	// MIDI 时间戳（单位：毫秒）
+	// MIDI 时间戳（单位：秒）
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	float Time;
 
+	// MIDI 持续时间（单位：秒）
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
+	float Duration;
+	
 	// MIDI 音符，0-127的值
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	int32 Note;
@@ -24,8 +28,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	int32 Velocity;
 
-	// 是否是音符开始的事件
-	bool bNoteOn;
+	// 事件类型 私有.
+	bool isNoteon;
+	
+	bool isNoteoff;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
 	mutable bool bPlayed;
@@ -34,7 +40,7 @@ public:
 	int32 InTrack;
 	
 	// 构造函数
-	FMidiEvent(): Time(0), Note(0), Velocity(0), bNoteOn(false),bPlayed(true),InTrack(0)
+	FMidiEvent(): Time(0), Note(0), Velocity(0), isNoteon(false),isNoteoff(),bPlayed(true),InTrack(0)
 	{
 	}
 	

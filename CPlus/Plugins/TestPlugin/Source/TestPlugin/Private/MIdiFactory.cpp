@@ -22,7 +22,7 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 {
 	// 创建新的 UMidiAsset 实例
 	bOutOperationCanceled = false;
-	UMidiAsset* MidiFileAsset = FindObject<UMidiAsset>(InParent, *Name.ToString());
+	
 	UMidiAsset* NewMidiAsset = NewObject<UMidiAsset>(InParent,Class, Name, Flags);
 
 	TArray<uint8> FileData;
@@ -45,7 +45,7 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
 {
 
 	// 将 FString 转换为 std::string（midifile 库需要 std::string 类型）
-    std::string MidiFilePath = TCHAR_TO_UTF8(*FilePath);
+	std::string MidiFilePath = TCHAR_TO_UTF8(*FilePath);
 
     // 创建 MidiFile 对象
     smf::MidiFile midiFile;
@@ -53,12 +53,20 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     // 读取 MIDI 文件
     if (midiFile.read(MidiFilePath))
     {
-    	ConvertMidiToWav(FilePath,FilePath,"D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/ThirdParty/fluidsynth/FluidR3_GM_GS.sf2");
+    	
         // 清空空轨道
     	midiFile.removeEmpties();
     	
     	//时间分析
 		midiFile.doTimeAnalysis();
+    	
+    
+    	
+	//链接noteon / off
+    	midiFile.linkNotePairs();
+
+    	//获取文件长度
+    	Midi.Length=midiFile.getFileDurationInSeconds();
     	
         // 获取轨道数量
     	Midi.TracksNumber = midiFile.getTrackCount();
@@ -84,29 +92,39 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
                 smf::MidiEvent& event = midiFile[TrackIndex][EventIndex];
 
                 // 创建 MIDI 事件对象
-                FMidiEvent MidiEvent;
-            	
+                FMidiEvent MidiEventon;
+            	FMidiEvent MidiEventoff;
             	//设置时间
-                MidiEvent.Time =	event.seconds;
+                MidiEventon.Time = event.seconds;
+
+            	MidiEventon.Duration = event.getDurationInSeconds();
+            //	event.isLinked();
             	
                 // 如果是 Note On 事件（音符开启）
-                if (event.getCommandByte() == 0x90) // Note On
+                if (event.isNoteOn()) // Note On
                 {
-                    MidiEvent.Note = event.getKeyNumber(); // 音符
-                    MidiEvent.Velocity =event.getVelocity(); // 力度
-                    MidiEvent.bNoteOn = true;
-                	MidiEvent.InTrack=TrackIndex+1;
+         
+                    MidiEventon.Note = event.getKeyNumber(); // 音符
+                    MidiEventon.Velocity =event.getVelocity(); // 力度
+                    MidiEventon.isNoteon = true;
+                	MidiEventon.InTrack=TrackIndex+1;
+
+                	//关联的Noteoff事件
+                	MidiEventoff.Note=event.getLinkedEvent()->getKeyNumber();
+                	MidiEventoff.Velocity=event.getLinkedEvent()->getVelocity();
+                	MidiEventoff.isNoteoff = true;
                 }
-                // 如果是 Note Off 事件（音符关闭）
-       /*         else if (event.getCommandByte() == 0x80) // Note Off
+             /*   // 如果是 Note Off 事件（音符关闭）
+                else if (event.isNoteOff()) // Note Off
                 {
                 	MidiEvent.Note = event.getKeyNumber(); // 音符
                 	MidiEvent.Velocity =event.getVelocity(); // 力度
-                    MidiEvent.bNoteOn = false;
+                    MidiEvent.isNoteoff = true;
                 }
-        */
+            */
             	//将事件添加到轨道
-            	Track.TrackEvents.Add(MidiEvent);
+            	Track.TrackEvents.Add(MidiEventon);
+            	Track.TrackEvents.Add(MidiEventoff);
             }
 			
             // 将解析的轨道添加到 MidiAsset 中
@@ -126,5 +144,28 @@ void UMidiFactory::ConvertMidiToWav(const FString& FilePath, const FString& Outp
 {
 
 	const char* config = "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/ThirdParty/Timidity/TIMIDITY.cfg";
+	//const char *config=NULL ;
 
+	
+	if (mid_init(config)==0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Failed to init timidity file"));
+	}
+
+	MidIStream *stream={0};
+	MidSongOptions *options={0};
+	options->rate = 44100;
+	options->format = 16;
+	options->channels = 2;
+	options->buffer_size = 44100;
+	options->_pad=0;
+	options->_reserved=0;
+	//const char *file_path = "D:/Administrator/Download/yuanshen.mid";
+	
+	mid_istream_open_file(TCHAR_TO_UTF8(*FilePath));
+	
+	MidSong *song = mid_song_load(stream, options);
+	
+	mid_song_start(song);
+	
 }
