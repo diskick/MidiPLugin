@@ -29,8 +29,9 @@ public:
 	int32 Velocity;
 
 	// 事件类型 私有.
+
 	bool isNoteon;
-	
+
 	bool isNoteoff;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MIDI Event")
@@ -40,7 +41,7 @@ public:
 	int32 InTrack;
 	
 	// 构造函数
-	FMidiEvent(): Time(0), Note(0), Velocity(0), isNoteon(false),isNoteoff(),bPlayed(true),InTrack(0)
+	FMidiEvent(): Time(0), Duration(-1), Note(0), Velocity(0),isNoteon(false),isNoteoff(),bPlayed(true),InTrack(0)
 	{
 	}
 	

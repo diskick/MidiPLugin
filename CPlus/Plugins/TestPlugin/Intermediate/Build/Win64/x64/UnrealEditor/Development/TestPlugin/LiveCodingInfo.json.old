@@ -11,7 +11,6 @@
 			"MidiAsset.cpp.obj",
 			"MidiEvent.cpp.obj",
 			"MIdiFactory.cpp.obj",
-			"MiDiPlayerComponent.cpp.obj",
 			"TestPlugin.cpp.obj"
 		]
 	}

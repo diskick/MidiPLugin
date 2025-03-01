@@ -25,23 +25,15 @@ UObject* UMidiFactory::FactoryCreateFile(UClass* Class, UObject* InParent, FName
 	
 	UMidiAsset* NewMidiAsset = NewObject<UMidiAsset>(InParent,Class, Name, Flags);
 
-	TArray<uint8> FileData;
+	
 	NewMidiAsset->SetPath(FilePath);
-	if (FFileHelper::LoadFileToArray(FileData, *FilePath))
-	{
-		UE_LOG(LogTemp, Display, TEXT("Loading MIDI File: %s"), *FilePath);
-		ParseMidiFile(*FilePath,*NewMidiAsset);
-	}
-	else
-	{
-		bOutOperationCanceled = true;
-		return nullptr;
-	}
+	
+	bOutOperationCanceled = ParseMidiFile(*FilePath,*NewMidiAsset);
 
 	return NewMidiAsset;
 }
 
-void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
+bool UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
 {
 
 	// 将 FString 转换为 std::string（midifile 库需要 std::string 类型）
@@ -55,8 +47,8 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     {
     	
         // 清空空轨道
-    	midiFile.removeEmpties();
-    	
+    	//midiFile.removeEmpties();
+    	midiFile.joinTracks();
     	//时间分析
 		midiFile.doTimeAnalysis();
     	
@@ -94,51 +86,44 @@ void UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
                 // 创建 MIDI 事件对象
                 FMidiEvent MidiEventon;
             	FMidiEvent MidiEventoff;
-            	//设置时间
-                MidiEventon.Time = event.seconds;
-
-            	MidiEventon.Duration = event.getDurationInSeconds();
-            //	event.isLinked();
             	
                 // 如果是 Note On 事件（音符开启）
                 if (event.isNoteOn()) // Note On
                 {
-         
+                	MidiEventon.Time = event.seconds;
+                	MidiEventon.Duration = event.getDurationInSeconds();
                     MidiEventon.Note = event.getKeyNumber(); // 音符
                     MidiEventon.Velocity =event.getVelocity(); // 力度
                     MidiEventon.isNoteon = true;
                 	MidiEventon.InTrack=TrackIndex+1;
 
                 	//关联的Noteoff事件
+                	MidiEventoff.Time = event.getLinkedEvent()->seconds;
                 	MidiEventoff.Note=event.getLinkedEvent()->getKeyNumber();
                 	MidiEventoff.Velocity=event.getLinkedEvent()->getVelocity();
                 	MidiEventoff.isNoteoff = true;
+                	Track.TrackEvents.Add(MidiEventon);
+                	Track.TrackEvents.Add(MidiEventoff);
                 }
-             /*   // 如果是 Note Off 事件（音符关闭）
-                else if (event.isNoteOff()) // Note Off
-                {
-                	MidiEvent.Note = event.getKeyNumber(); // 音符
-                	MidiEvent.Velocity =event.getVelocity(); // 力度
-                    MidiEvent.isNoteoff = true;
-                }
-            */
-            	//将事件添加到轨道
-            	Track.TrackEvents.Add(MidiEventon);
-            	Track.TrackEvents.Add(MidiEventoff);
             }
 			
             // 将解析的轨道添加到 MidiAsset 中
            Midi.MidiTracks.Add(Track);
         }
+    	return true;
     }
     else
     {
         // 如果 MIDI 文件读取失败，打印错误日志
         UE_LOG(LogTemp, Warning, TEXT("Failed to load MIDI file: %s"), *FilePath);
+    	return false;
     }
-
-	 
 }
+
+
+
+
+
 
 void UMidiFactory::ConvertMidiToWav(const FString& FilePath, const FString& OutputWavFilePath,const FString& SoundFontPath)
 {

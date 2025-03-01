@@ -9,7 +9,6 @@
 			"TestPlugin.init.gen.cpp.obj",
 			"FAssetTypeActions_MidiAsset.cpp.obj",
 			"MidiAsset.cpp.obj",
-			"MidiEvent.cpp.obj",
 			"MIdiFactory.cpp.obj",
 			"TestPlugin.cpp.obj"
 		]

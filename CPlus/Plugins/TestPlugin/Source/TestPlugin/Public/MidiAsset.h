@@ -34,6 +34,7 @@ public:
 	// 重写 GetStatId 函数
 	virtual TStatId GetStatId() const override;
 	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,  Category="MIDI")
 	bool cantick;
 
 	// MIDI 文件的路径

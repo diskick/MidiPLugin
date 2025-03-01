@@ -17,7 +17,7 @@ public:
 	virtual UObject* FactoryCreateFile(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags,
 	                                   const FString& FilePath, const TCHAR* Parms, FFeedbackContext* Context,
 	                                   bool& bOutOperationCanceled) override;
-	static void ParseMidiFile(const FString& FilePath,UMidiAsset& Midi);
+	static bool ParseMidiFile(const FString& FilePath,UMidiAsset& Midi);
 	static void ConvertMidiToWav(const FString& FilePath,const FString& OutputWavFilePath, const FString& SoundFontPath);
 
 

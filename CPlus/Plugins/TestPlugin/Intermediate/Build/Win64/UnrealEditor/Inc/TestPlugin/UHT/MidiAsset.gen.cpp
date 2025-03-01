@@ -218,6 +218,10 @@ struct Z_Construct_UClass_UMidiAsset_Statics
 		{ "IncludePath", "MidiAsset.h" },
 		{ "ModuleRelativePath", "Public/MidiAsset.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_cantick_MetaData[] = {
+		{ "Category", "MIDI" },
+		{ "ModuleRelativePath", "Public/MidiAsset.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FilePath_MetaData[] = {
 		{ "Category", "MIDI" },
 #if !UE_BUILD_SHIPPING
@@ -293,6 +297,8 @@ struct Z_Construct_UClass_UMidiAsset_Statics
 		{ "ModuleRelativePath", "Public/MidiAsset.h" },
 	};
 #endif // WITH_METADATA
+	static void NewProp_cantick_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_cantick;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_FilePath;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_FileName;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Length;
@@ -314,6 +320,11 @@ struct Z_Construct_UClass_UMidiAsset_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+void Z_Construct_UClass_UMidiAsset_Statics::NewProp_cantick_SetBit(void* Obj)
+{
+	((UMidiAsset*)Obj)->cantick = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_cantick = { "cantick", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UMidiAsset), &Z_Construct_UClass_UMidiAsset_Statics::NewProp_cantick_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_cantick_MetaData), NewProp_cantick_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_FilePath = { "FilePath", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, FilePath), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FilePath_MetaData), NewProp_FilePath_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_FileName = { "FileName", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, FileName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FileName_MetaData), NewProp_FileName_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_Length = { "Length", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, Length), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Length_MetaData), NewProp_Length_MetaData) };
@@ -324,6 +335,7 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMidiAsset_Stat
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOnEvent = { "OnNoteOnEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOnEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOnEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOnEvent_MetaData), NewProp_OnNoteOnEvent_MetaData) }; // 3456786650
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UMidiAsset_Statics::NewProp_OnNoteOffEvent = { "OnNoteOffEvent", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMidiAsset, OnNoteOffEvent), Z_Construct_UDelegateFunction_TestPlugin_OnNoteOffEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnNoteOffEvent_MetaData), NewProp_OnNoteOffEvent_MetaData) }; // 2023988585
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMidiAsset_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_cantick,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_FilePath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_FileName,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMidiAsset_Statics::NewProp_Length,
@@ -375,10 +387,10 @@ UMidiAsset::~UMidiAsset() {}
 struct Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMidiAsset, UMidiAsset::StaticClass, TEXT("UMidiAsset"), &Z_Registration_Info_UClass_UMidiAsset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMidiAsset), 3459676256U) },
+		{ Z_Construct_UClass_UMidiAsset, UMidiAsset::StaticClass, TEXT("UMidiAsset"), &Z_Registration_Info_UClass_UMidiAsset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMidiAsset), 696628800U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_3337831852(TEXT("/Script/TestPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_253109992(TEXT("/Script/TestPlugin"),
 	Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

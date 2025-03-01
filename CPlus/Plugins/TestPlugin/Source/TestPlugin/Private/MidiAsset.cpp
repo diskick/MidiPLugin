@@ -142,29 +142,40 @@ if (cantick)
 			{
 				// 触发 Note On 事件
 				if (IsInGameThread())
-				OnNoteOnEvent.Broadcast(NoteEvent);
+				{
+					OnNoteOnEvent.Broadcast(NoteEvent);
+				}
+			
 				else
+				{
 					AsyncTask(ENamedThreads::GameThread, [this, NoteEvent](){OnNoteOnEvent.Broadcast(NoteEvent);});
+				}
 				
 				NoteEvent.bPlayed=true;
 				
 				if (NoteEvent.Time==MidiTracks[i].TrackEvents.Last().Time)
 					cantick=false;
 			}
-
-			else if (NoteEvent.isNoteoff)
+/*
+			else if (NoteEvent.isNoteoff&&!NoteEvent.bPlayed)
 			{
-				if (IsInGameThread())
+			//	if (IsInGameThread())
+				{
 					OnNoteOffEvent.Broadcast(NoteEvent);
-				else
-					AsyncTask(ENamedThreads::GameThread, [this, NoteEvent](){OnNoteOffEvent.Broadcast(NoteEvent);});
+				}
+					
+			//	else
+				{
+			//		AsyncTask(ENamedThreads::GameThread, [this, NoteEvent](){OnNoteOffEvent.Broadcast(NoteEvent);});
+				}
+					
 				
 				NoteEvent.bPlayed=true;
 				
 				if (NoteEvent.Time==MidiTracks[i].TrackEvents.Last().Time)
 					cantick=false;
 			}
-				
+				*/
 		}
 		
 	}

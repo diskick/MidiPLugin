@@ -6,6 +6,5 @@
 #include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Intermediate/Build/Win64/UnrealEditor/Inc/TestPlugin/UHT/TestPlugin.init.gen.cpp"
 #include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/TestPlugin/Private/FAssetTypeActions_MidiAsset.cpp"
 #include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/TestPlugin/Private/MidiAsset.cpp"
-#include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/TestPlugin/Private/MidiEvent.cpp"
 #include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/TestPlugin/Private/MIdiFactory.cpp"
 #include "D:/UEProject/CPlus/MidiPLugin/CPlus/Plugins/TestPlugin/Source/TestPlugin/Private/TestPlugin.cpp"
