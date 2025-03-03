@@ -47,12 +47,12 @@ bool UMidiFactory::ParseMidiFile(const FString& FilePath,UMidiAsset& Midi)
     {
     	
         // 清空空轨道
-    	//midiFile.removeEmpties();
-    	midiFile.joinTracks();
+    	midiFile.removeEmpties();
+
     	//时间分析
 		midiFile.doTimeAnalysis();
     	
-    
+    	midiFile.joinTracks();
     	
 	//链接noteon / off
     	midiFile.linkNotePairs();

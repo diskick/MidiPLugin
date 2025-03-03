@@ -34,8 +34,9 @@ public class TestPlugin : ModuleRules
 			new[]
 			{
 				"$(ModuleDir)/../ThirdParty/Midi_Library/bin/Midi.lib",
+				"$(ModuleDir)/../ThirdParty/Timidity/StaticLibDebug.lib",
+				//"$(ModuleDir)/../ThirdParty/Timidity/StaticLibRelease.lib"
 				
-				"$(ModuleDir)/../ThirdParty/Timidity/StaticLib1.lib"
 				//大坑一个,磨了三天,宏定有了导出宏,删掉居然就好了.
 				//"$(ModuleDir)/../ThirdParty/fluidsynth/lib/libfluidsynth-3.dll.a"
 				//浪费我的时间精力,.a文件是给liunx用的,没有Cmake暂时不知道如何构建DLL文件,而且DLL问题还蛮多的

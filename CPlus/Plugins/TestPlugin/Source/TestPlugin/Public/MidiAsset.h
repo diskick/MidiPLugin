@@ -28,6 +28,8 @@ public:
 	// 重写 Tick 函数
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void PostLoad() override;
+
 	// 重写 IsTickable 函数
 	virtual bool IsTickable() const override;
 
@@ -38,22 +40,22 @@ public:
 	bool cantick;
 
 	// MIDI 文件的路径
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,  Category="MIDI")
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,  Category="MIDI")
 	FString FilePath;
 	//文件名
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,  Category="MIDI")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="MIDI")
 	FString FileName;
 	
 	// MIDI 文件的时长
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI")
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "MIDI")
 	float Length;
 	
 	//轨道数
-	UPROPERTY(BlueprintReadOnly,EditDefaultsOnly, Category = "MIDI Event")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category = "MIDI Event")
 	int32 	TracksNumber;
 	
 	// MIDI 文件中的所有轨道
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
+	UPROPERTY(VisibleAnywhere, Category = "MIDI Event")
 	TArray<FMidiTrack> MidiTracks;
 
 
@@ -61,7 +63,7 @@ public:
 	
 	// MIDI 解析相关数据
 	// 当前播放时间（以秒为单位）
-	UPROPERTY(BlueprintReadWrite, Category = "MIDI")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Event")
 	float CurrentTime;
 	
 
@@ -83,6 +85,11 @@ UFUNCTION(BlueprintCallable, Category = "MIDI")
 	FOnNoteOnEvent OnNoteOnEvent;
 
 	UPROPERTY(BlueprintAssignable, Category = "Midi Events")
-	FOnNoteOffEvent OnNoteOffEvent;;
+	FOnNoteOffEvent OnNoteOffEvent;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "MIDI")
+	void HandleNoteOff(FMidiEvent event);
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "MIDI")
+	void HandleNoteOn(FMidiEvent event) ;
 };

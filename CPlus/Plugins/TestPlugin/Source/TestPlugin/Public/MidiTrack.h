@@ -13,11 +13,11 @@ struct FMidiTrack
 
 public:
 	// MIDI 轨道名称或标识符
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Track")
+	UPROPERTY(VisibleAnywhere, Category = "MIDI Track")
 	FString TrackName;
 
 	// MIDI 轨道上的所有事件
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "MIDI Track")
+	UPROPERTY(VisibleAnywhere, Category = "MIDI Track")
 	TArray<FMidiEvent> TrackEvents;
 
 	

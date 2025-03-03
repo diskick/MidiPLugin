@@ -28,6 +28,7 @@ TESTPLUGIN_API void FOnNoteOffEvent_DelegateWrapper(const FMulticastScriptDelega
 	DECLARE_FUNCTION(execplaynotes);
 
 
+#define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_CALLBACK_WRAPPERS
 #define FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUMidiAsset(); \
@@ -54,6 +55,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_CALLBACK_WRAPPERS \
 	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_INCLASS_NO_PURE_DECLS \
 	FID_CPlus_Plugins_TestPlugin_Source_TestPlugin_Public_MidiAsset_h_21_ENHANCED_CONSTRUCTORS \
 private: \

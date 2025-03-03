@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-TestPlugin-0001.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\UEProject\CPlus\Intermediate\Build\Win64\x64\CPlusEditor\Development\Core\SharedPCH.Core.Project.ValApi.Cpp20.h.obj"
-"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\TestPlugin.cpp.obj"
-"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Default.rc2.res"
-/OUT:"D:\UEProject\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\UnrealEditor-TestPlugin-0001.lib"
+"D:\UEProject\CPlus\MidiPLugin\CPlus\Intermediate\Build\Win64\x64\CPlusEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Module.TestPlugin.cpp.obj"
+"D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Default.rc2.res"
+/OUT:"D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\UnrealEditor-TestPlugin-0001.lib"

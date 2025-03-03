@@ -31,7 +31,7 @@ void FTestPluginModule::StartupModule()
 
 
 
-
+//GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Cyan, TEXT("111");
 
 
 

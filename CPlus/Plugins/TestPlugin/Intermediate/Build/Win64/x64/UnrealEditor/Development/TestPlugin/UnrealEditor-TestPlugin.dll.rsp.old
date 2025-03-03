@@ -39,7 +39,7 @@
 "D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Module.TestPlugin.cpp.obj"
 "D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestPlugin\Default.rc2.res"
 "D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Source\ThirdParty\Midi_Library\bin\Midi.lib"
-"D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Source\ThirdParty\Timidity\libtimidity.lib"
+"D:\UEProject\CPlus\MidiPLugin\CPlus\Plugins\TestPlugin\Source\ThirdParty\Timidity\StaticLibRelease.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorFramework\UnrealEditor-EditorFramework.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\AssetTools\UnrealEditor-AssetTools.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\UnrealEditor-UnrealEd.lib"
